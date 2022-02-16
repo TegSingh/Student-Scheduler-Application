@@ -39,6 +39,14 @@ public class Person {
         this.email = email;
     }
 
+    public List<Todo> getTodos() {
+        return todos;
+    }
+
+    public void setTodos(List<Todo> todos) {
+        this.todos = todos;
+    }
+
     @Override
     public String toString() {
         return "Person ID: " + id +

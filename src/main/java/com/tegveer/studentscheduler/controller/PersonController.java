@@ -1,6 +1,7 @@
 package com.tegveer.studentscheduler.controller;
 
 import com.tegveer.studentscheduler.models.Person;
+import com.tegveer.studentscheduler.models.Todo;
 import com.tegveer.studentscheduler.repository.PersonRepository;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,6 +33,20 @@ public class PersonController {
     public Optional<Person> getPersonById(@PathVariable Integer id) {
         System.out.println("Get person by ID: " + id);
         return this.personRepository.findById(id);
+    }
+
+    // READ - Get Todos for a person
+    @GetMapping(path = "/{id}/todos")
+    public Iterable<Todo> getTodosForPerson(@PathVariable Integer id) {
+        System.out.println("Getting Todos for Person with ID: " + id);
+        Optional<Person> personOptional = this.personRepository.findById(id);
+        if (!personOptional.isPresent()) {
+            System.out.println("Person not found");
+            return null;
+        } else {
+            Person personChoice = personOptional.get();
+            return personChoice.getTodos();
+        }
     }
 
     // CREATE
