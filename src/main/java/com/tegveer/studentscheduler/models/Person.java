@@ -2,6 +2,7 @@ package com.tegveer.studentscheduler.models;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -47,6 +48,16 @@ public class Person {
         this.todos = todos;
     }
 
+    public Iterable<Todo> getTodosBeforeDate(Date due) {
+        ArrayList<Todo> todosBeforeDate = new ArrayList<>();
+        for ( Todo todo: this.todos ) {
+            if (todo.getDue_date().before(due)) {
+                todosBeforeDate.add(todo);
+            }
+        }
+        return todosBeforeDate;
+    }
+    
     @Override
     public String toString() {
         return "Person ID: " + id +

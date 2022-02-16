@@ -1,12 +1,22 @@
 # Student Scheduler Application
 This is a simple full stack development practice project using Spring, PostgreSQl and React
 
-## Test your API
+## List of Routes to Test your API
 
-```shell
-# Get all values in table person
-curl localhost:8080/api/person
+### CRUD Routes
 
-# Get all values in table todo
-curl localhost:8080/api/todo
-```
+**api/person GET:** Gets the list of people in the database
+**api/person/id GET:** Gets the person with ID requested in the path
+**api/person POST:** Inserts a person in the database and requests JSON body
+**api/person/id PUT:** Updates person table with requested ID and requests JSON body
+**api/person/id DELETE:** Deletes a person with the requested ID
+**api/todo GET:** Gets the list of todo in the database
+**api/todo/id GET:** Gets the todo with ID requested in the path
+**api/todo POST:** Inserts a todo in the database and requests JSON body
+**api/todo/id PUT:** Updates a person in the database with requested ID and requests JSON body
+**api/todo/id DELETE:** Deletes a person with the requested ID
+
+### Custom Routes
+
+**api/person/id/todos GET:** Get Todos for the person with requested ID
+**api/person/id/todos/date GET:** Gets todos before a certain date (form input) for the person with requested ID
