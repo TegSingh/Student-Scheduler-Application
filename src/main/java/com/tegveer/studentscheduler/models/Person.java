@@ -1,6 +1,8 @@
 package com.tegveer.studentscheduler.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="person")
@@ -8,6 +10,7 @@ public class Person {
 
     @Id
     @GeneratedValue
+    @Column(name = "id")
     private Integer id;
 
     @Column(name="name")
@@ -15,6 +18,10 @@ public class Person {
 
     @Column(name="email")
     private String email;
+
+    @OneToMany
+    @JoinColumn(name = "person_id", referencedColumnName = "id")
+    private List<Todo> todos;
 
     public String getName() {
         return name;

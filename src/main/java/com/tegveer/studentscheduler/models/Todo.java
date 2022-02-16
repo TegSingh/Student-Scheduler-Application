@@ -20,11 +20,8 @@ public class Todo {
     @Column(name="date_added")
     private Date date_added;
 
-    // Many To-dos for one person
-    @ManyToOne
-    // The column in this table that is being used to reference the primary key in person is person_id
-    @JoinColumn(name = "person_id")
-    private Person person;
+    @Column(name = "person_id")
+    private Integer person_id;
 
     public String getName() {
         return name;
@@ -50,11 +47,17 @@ public class Todo {
         this.date_added = date_added;
     }
 
-    public Person getPerson() {
-        return person;
+    public Integer getPerson_id() {
+        return person_id;
     }
 
-    public void setPerson(Person person) {
-        this.person = person;
+    public void setPerson_id(Integer person_id) {
+        this.person_id = person_id;
+    }
+
+    @Override
+    public String toString() {
+        return "Todo: " + name + " due at: " + due_date.toString() +
+                " added at: " + date_added.toString();
     }
 }
