@@ -20,9 +20,12 @@ public class Person {
     @Column(name="email")
     private String email;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "person_id", referencedColumnName = "id")
     private List<Todo> todos;
+
+    @Column(name = "password")
+    private String password;
 
     public String getName() {
         return name;
@@ -46,6 +49,14 @@ public class Person {
 
     public void setTodos(List<Todo> todos) {
         this.todos = todos;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Iterable<Todo> getTodosBeforeDate(Date due) {

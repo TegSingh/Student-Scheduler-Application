@@ -14,7 +14,7 @@ This is a simple full stack development practice project using Spring, PostgreSQ
 **api/todo/id GET:** Gets the todo with ID requested in the path \
 **api/todo POST:** Inserts a todo in the database and requests JSON body \
 **api/todo/id PUT:** Updates a person in the database with requested ID and requests JSON body \
-**api/todo/id DELETE:** Deletes a person with the requested ID \
+**api/todo/id DELETE:** Deletes a person with the requested ID
 
 ### Custom Routes
 

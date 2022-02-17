@@ -85,6 +85,9 @@ public class PersonController {
             if (person.getEmail() != null) {
                 personUpdate.setEmail(person.getEmail());
             }
+            if (person.getPassword() != null) {
+                personUpdate.setPassword(person.getPassword());
+            }
             return this.personRepository.save(personUpdate);
         } else {
             System.out.println("Could not locate person");
