@@ -8,6 +8,7 @@ import java.util.Optional;
 
 // This class will control all crud operations for todos
 @RequestMapping("api/todo")
+@CrossOrigin(origins = "http://localhost:3000/", maxAge = 3600)
 @RestController
 public class TodoController {
 

@@ -3,10 +3,12 @@ package com.tegveer.studentscheduler.models;
 import javax.persistence.*;
 import java.util.Date;
 
+// This is an entity in the underlying PostgreSQL database
 @Entity
 @Table(name="todo")
 public class Todo {
 
+    // Primary key in Todo
     @Id
     @GeneratedValue
     private Integer id;
@@ -23,6 +25,7 @@ public class Todo {
     @Column(name = "person_id")
     private Integer person_id;
 
+    // Getters and Setters
     public String getName() {
         return name;
     }
