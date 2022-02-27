@@ -7,7 +7,9 @@ This is a simple full stack development practice project using Spring, PostgreSQ
 
 **api/person GET:** Gets the list of people in the database \
 **api/person/id GET:** Gets the person with ID requested in the path \
+**api/person/login GET:** Gets the person with the email and password provided as params \
 **api/person POST:** Inserts a person in the database and requests JSON body \
+**api/person POST:** Registers a person with the provided parameters \
 **api/person/id PUT:** Updates person table with requested ID and requests JSON body \
 **api/person/id DELETE:** Deletes a person with the requested ID \
 **api/todo GET:** Gets the list of todo in the database \
